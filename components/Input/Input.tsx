@@ -13,7 +13,7 @@ interface IProps extends React.Props<any> {
   onChange(value: string)
   onBlur(value: number)
 }
-@observer
+
 export default class Input extends React.Component<IProps, any>{
   onChange = (e) => {
     if (!this.props.onChange) {

@@ -6,7 +6,6 @@ import { Styles } from '../styles'
 interface IProps extends React.Props<any> {
   label: string
   onClick?: any
-  cid?: string
   icon?: string
   cssClass: string 
 }
