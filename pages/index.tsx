@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Provider } from 'mobx-react'
 import {setStylesTarget} from "typestyle"
 import { initStore, Store } from '../store'
-import Page from '../components/Page'
+import Todoist from '../components/Todoist/Todoist'
 
 if (typeof document !== 'undefined') {
   setStylesTarget(document.getElementById('styles-target') as any)
@@ -25,8 +25,8 @@ export default class Counter extends React.Component<void, void> {
 
   render () {
     return (
-      <Provider store={this.store}>
-        <Page title='Index Page' linkTo='/other' />
+      <Provider>
+        <Todoist />
       </Provider>
     )
   }
