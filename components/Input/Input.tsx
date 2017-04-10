@@ -32,7 +32,7 @@ export default class Input extends React.Component<IProps, any>{
   render(){
     return (
       <input type={this.props.type } className={ this.props.cssClass }  style={ Styles.form_control}
-          placeholder={ this.props.placeholder } 
+          placeholder={ this.props.placeholder } autoFocus
           value={ this.props.value } defaultValue={ this.props.defaultValue } onChange={ this.onChange } onBlur={this.onBlur }>
       </input>
     )
