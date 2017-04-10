@@ -41,21 +41,25 @@ export default class Todoist extends React.Component<IProps, any>{
                   </ul>
               </div>
             </li>
-            <li className={this.store.active ? "show" : "hide"}>
-              <form>
-              <div className="form-group" >
-                <Input type="text" cssClass="form-control" 
-                  placeholder="add task" value={ this.store.task } 
-                  onChange={(value) => this.handleOnChange(value)}
-                  onBlur={(value) => this.onBlur(value)}
-                  />
-                <div style={Styles.button_area}>
-                <Button cssClass="btn btn-info" onClick={this.handleAddTask} label="Save"/>
-                <Button cssClass="btn btn-warning" onClick={this.toogleAddTask} label="Cancel"/>
-                </div>
-              </div>
-              </form>
-            </li>
+            {
+              this.store.active?(
+                <li className={this.store.active ? "show" : "hide"}>
+                  <form>
+                  <div className="form-group" >
+                    <Input type="text" cssClass="form-control" 
+                      placeholder="add task" value={ this.store.task } 
+                      onChange={(value) => this.handleOnChange(value)}
+                      onBlur={(value) => this.onBlur(value)}
+                      />
+                    <div style={Styles.button_area}>
+                    <Button cssClass="btn btn-info" onClick={this.handleAddTask} label="Save"/>
+                    <Button cssClass="btn btn-warning" onClick={this.toogleAddTask} label="Cancel"/>
+                    </div>
+                  </div>
+                  </form>
+                </li>
+              ):undefined
+            }
             <li className={this.store.active ? "hide" : "show"}>
               <Button cssClass="btn btn-link" onClick={ this.toogleAddTask} icon="fa fa-plus" label="Add task"/>
             </li>
